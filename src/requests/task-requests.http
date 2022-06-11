@@ -1,0 +1,29 @@
+### Add task
+POST http://localhost:3000/tasks 
+content-type: application/json
+
+{
+  "title": "sda",
+  "description": "asdasdasdasdasdasdasd",
+  "isDone": false,
+  "priority": "12",
+  "dueDate": "05/07"
+}
+
+### Edit task
+Put http://localhost:3000/tasks/62a22dcb60e8b97b1a3c68de 
+content-type: application/json
+
+{
+  "title": "sda",
+  "description": "asdasdasdasdasdasdasd",
+  "isDone": false,
+  "priority": "12",
+  "dueDate": "05/07"
+}
+
+### Mark task as done 
+Put http://localhost:3000/tasks/markdone/62a22dcb60e8b97b1a3c68de
+
+### Mark task as undone 
+Put http://localhost:3000/tasks/markundone/62a22dcb60e8b97b1a3c68de

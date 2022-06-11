@@ -1,0 +1,34 @@
+### Add user
+POST http://localhost:3000/users 
+content-type: application/json
+
+{
+  "username": "asasddf",
+  "email": "a@asasd.com",
+  "password": "123452"
+}
+
+### Confirm user Email
+PUT http://localhost:3000/users/emailconfirm/62a4dc1b231e87c477b8dc29
+
+### Signin
+POST http://localhost:3000/users/signin/62a4dc1b231e87c477b8dc29
+content-type: application/json
+
+{
+  "email": "a@asasd.com",
+  "password": "123452"
+}
+
+### Signout
+POST http://localhost:3000/users/signout/62a4dc1b231e87c477b8dc29
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTRkYzFiMjMxZTg3YzQ3N2I4ZGMyOSIsImlhdCI6MTY1NDk3NzE0NywiZXhwIjoxNjU0OTgwNzQ3fQ.j0ozk0-DM9e5QgqRzVvyIuNWRW07BdV0K_MLWERP_j8
+
+{
+  "email": "a@asasd.com",
+  "password": "123452"
+}
+
+### test
+POST http://localhost:3000/users/test
