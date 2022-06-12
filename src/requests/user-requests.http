@@ -3,32 +3,25 @@ POST http://localhost:3000/users
 content-type: application/json
 
 {
-  "username": "asasddf",
-  "email": "a@asasd.com",
+  "username": "test",
+  "email": "t@test.com",
   "password": "123452"
 }
 
 ### Confirm user Email
-PUT http://localhost:3000/users/emailconfirm/62a4dc1b231e87c477b8dc29
+PUT http://localhost:3000/users/emailconfirm/62a63c74973b7963b5a3b4d8
 
 ### Signin
-POST http://localhost:3000/users/signin/62a4dc1b231e87c477b8dc29
+POST http://localhost:3000/users/signin
 content-type: application/json
 
 {
-  "email": "a@asasd.com",
+  "email": "t@test.com",
   "password": "123452"
 }
 
 ### Signout
-POST http://localhost:3000/users/signout/62a4dc1b231e87c477b8dc29
+POST http://localhost:3000/users/signout
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTRkYzFiMjMxZTg3YzQ3N2I4ZGMyOSIsImlhdCI6MTY1NDk3NzE0NywiZXhwIjoxNjU0OTgwNzQ3fQ.j0ozk0-DM9e5QgqRzVvyIuNWRW07BdV0K_MLWERP_j8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyYTRkYzFiMjMxZTg3YzQ3N2I4ZGMyOSIsInVzZXJuYW1lIjoiYXNhc2RkZiIsImVtYWlsIjoiYUBhc2FzZC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1MiIsImNvbmZpcm1lZEF0IjoiMTEtMDYtMjAyMiAyMToxNyIsIl9fdiI6MH0sImlhdCI6MTY1NTA1MTUwOCwiZXhwIjoxNjU1MDU1MTA4fQ.zZdZr2NGyjuzlHZc9DjI5l2jAu5EZimoq6k4lAy-Cxs
 
-{
-  "email": "a@asasd.com",
-  "password": "123452"
-}
-
-### test
-POST http://localhost:3000/users/test

@@ -1,6 +1,5 @@
 import { UserService } from "../services/user-service";
 import { Response, Request } from "express";
-import moment from "moment";
 
 export class UserController {
   constructor(private userService: UserService) {}
@@ -39,12 +38,13 @@ export class UserController {
   }
 
   async signout(req: Request, res: Response) {
-    const id = req.params.id;
-    console.log(req.body);
-  }
+    try {
+      const user = req.body.user;
+      await this.userService.signout(user);
 
-  async test(req: Request, res: Response) {
-    const data = moment().format("DD-MM-YYYY HH:mm");
-    res.json({ data });
+      res.json({ message: "User logged out" });
+    } catch (err: any) {
+      res.json({ message: err.message });
+    }
   }
 }

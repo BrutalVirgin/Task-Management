@@ -1,29 +1,40 @@
 ### Add task
 POST http://localhost:3000/tasks 
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyYTYzY0OTczYjc5NjNiNWEzYjRkOCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoidEB0ZXN0LmNvbSIsInBhc3N3b3JkIjoiMTIzNDUyIiwiY29uZmlybWVkQXQiOiIxMi0wNi0yMDIyIDIyOjIxIiwiX192IjowfSwiaWF0IjoxNjU1MDY0MDcwLCJleHAiOjE2NTUwNjc2NzB9.xTON7pvdpjVf4lCXpbpP8RxAHrE1EL0xqKI0BfD3OgA
 
 {
-  "title": "sda",
-  "description": "asdasdasdasdasdasdasd",
-  "isDone": false,
-  "priority": "12",
-  "dueDate": "05/07"
+  "data": {
+    "title": "sda",
+    "description": "asdasdasdasdasdasdasd",
+    "isDone": false,
+    "priority": "12",
+    "dueDate": "12-06-2023"
+
+  }
 }
 
-### Edit task
-Put http://localhost:3000/tasks/62a22dcb60e8b97b1a3c68de 
+### Edit task 
+Put http://localhost:3000/tasks/62a621c270d9b1aa8e6d84d8
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyYTYyZWNhYzgxNTEwODg1MWMzMGJlNiIsInVzZXJuYW1lIjoiYXNhc2ZkZGYiLCJlbWFpbCI6ImFAYXNhc2ZkLmNvbSIsInBhc3N3b3JkIjoiMTIzNDUyIiwiY29uZmlybWVkQXQiOm51bGwsIl9fdiI6MH0sImlhdCI6MTY1NTA1ODU0NiwiZXhwIjoxNjU1MDYyMTQ2fQ.RZgR-_jOJlWftSINR68pIR6UOG2fAGpU2jd_JqP8rIQ
 
 {
-  "title": "sda",
-  "description": "asdasdasdasdasdasdasd",
-  "isDone": false,
-  "priority": "12",
-  "dueDate": "05/07"
+  "data": {
+    "title": "sda",
+    "description": "wwwwwwwwwwwwwwwwwwwww",
+    "priority": "13",
+    "dueDate": "05/07/2023"}
 }
 
 ### Mark task as done 
-Put http://localhost:3000/tasks/markdone/62a22dcb60e8b97b1a3c68de
+Put http://localhost:3000/tasks/markdone/62a621c270d9b1aa8e6d84d8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyYTYyZWNhYzgxNTEwODg1MWMzMGJlNiIsInVzZXJuYW1lIjoiYXNhc2ZkZGYiLCJlbWFpbCI6ImFAYXNhc2ZkLmNvbSIsInBhc3N3b3JkIjoiMTIzNDUyIiwiY29uZmlybWVkQXQiOm51bGwsIl9fdiI6MH0sImlhdCI6MTY1NTA1OTQyMSwiZXhwIjoxNjU1MDYzMDIxfQ.qjGeiJB0grJmHbtubv7Bx-Otr0w5sJ0pNLy8-_L-wL8
 
 ### Mark task as undone 
-Put http://localhost:3000/tasks/markundone/62a22dcb60e8b97b1a3c68de
+Put http://localhost:3000/tasks/markundone/62a621c270d9b1aa8e6d84d8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyYTYyZWNhYzgxNTEwODg1MWMzMGJlNiIsInVzZXJuYW1lIjoiYXNhc2ZkZGYiLCJlbWFpbCI6ImFAYXNhc2ZkLmNvbSIsInBhc3N3b3JkIjoiMTIzNDUyIiwiY29uZmlybWVkQXQiOm51bGwsIl9fdiI6MH0sImlhdCI6MTY1NTA1OTY5NywiZXhwIjoxNjU1MDYzMjk3fQ.Hq9iCXuovd0Yl6yNrsNq9boK0c2afTe6rQd5ZJVEYv8
+
+### Delete task
+Put http://localhost:3000/tasks/deletetask/62a64077f47d0d97b58bb820
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyYTYzYzc0OTczYjc5NjNiNWEzYjRkOCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoidEB0ZXN0LmNvbSIsInBhc3N3b3JkIjoiMTIzNDUyIiwiY29uZmlybWVkQXQiOiIxMi0wNi0yMDIyIDIyOjIxIiwiX192IjowfSwiaWF0IjoxNjU1MDYyNTA4LCJleHAiOjE2NTUwNjYxMDh9.WI54DmLv2Inz4_P2WnY-r42fVlhqhzcSH634-3QfHCs

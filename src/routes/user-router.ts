@@ -7,21 +7,23 @@ const userRouter = express.Router();
 
 const userController = new UserController(new UserService());
 
+// Sign up
 userRouter.post("/", userController.signup.bind(userController));
 
+// Confirm his email
 userRouter.put(
   "/emailconfirm/:id",
   userController.confirmEmail.bind(userController)
 );
 
-userRouter.post("/signin/:id", userController.signin.bind(userController));
+// Sign in
+userRouter.post("/signin", userController.signin.bind(userController));
 
+// Sign out
 userRouter.post(
-  "/signout/:id",
+  "/signout",
   authenticateToken,
   userController.signout.bind(userController)
 );
-
-userRouter.post("/test", userController.test.bind(userController));
 
 export { userRouter };

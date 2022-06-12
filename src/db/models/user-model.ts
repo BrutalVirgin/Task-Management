@@ -1,7 +1,5 @@
 import { Schema, model } from "mongoose";
 import isEmail from "validator/lib/isEmail";
-import moment from "moment";
-moment().format();
 
 const user = new Schema({
   username: {

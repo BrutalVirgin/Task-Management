@@ -19,7 +19,7 @@ export class UserService {
     if (!user) throw new HttpError("User not found", 404);
 
     if (user.confirmedAt !== null) {
-      throw new HttpError("User already confirmed their email", 404);
+      throw new HttpError("User already confirmed email", 404);
     } else {
       const date = moment().format("DD-MM-YYYY HH:mm");
 
@@ -35,17 +35,36 @@ export class UserService {
 
     if (!user) throw new HttpError("Email not found", 404);
 
+    if (user.confirmedAt === null) {
+      throw new HttpError(
+        "User has not confirmed the email, access is denied",
+        400
+      );
+    }
+
     if (user.password !== password) {
       throw new HttpError("Incorrect password", 400);
     } else {
       const token = jwt.sign(
         {
-          id: user._id,
+          // id: user._id,
+          user,
         },
         String(process.env.JWT_TOKEN),
         { expiresIn: 3600 }
       );
       return { token: `Bearer ${token}` };
     }
+  }
+
+  async signout(user: IUser) {
+    const token = jwt.sign(
+      {
+        user,
+      },
+      "Invalid_token",
+      { expiresIn: 3600 }
+    );
+    return { token: `Bearer ${token}` };
   }
 }

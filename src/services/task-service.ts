@@ -7,19 +7,27 @@ export class TaskService {
     return await taskShema.create(data);
   }
 
-  async updateTask(id: string, data: ITask) {
-    const task = await taskShema.findByIdAndUpdate(id, data);
+  async updateTask(id: string, data: any) {
+    const taskToUpdate = await taskShema.findById(id);
 
-    if (!task) throw new HttpError("Wrong task id", 404);
+    if (!taskToUpdate) throw new HttpError("Wrong task id", 404);
+
+    if (taskToUpdate.userId !== data.user.user._id)
+      throw new HttpError("You cannot edit a task that is not your own", 400);
+
+    await taskShema.findByIdAndUpdate(id, data.data);
 
     const updatedTask = taskShema.findById(id);
     return updatedTask;
   }
 
-  async markTaskAsDone(id: string) {
+  async markTaskAsDone(id: string, data: any) {
     const task = await taskShema.findById(id);
 
     if (!task) throw new HttpError("Wrong task id", 404);
+
+    if (task.userId !== data.user._id)
+      throw new HttpError("You cannot edit a task that is not your own", 400);
 
     if (task.isDone === true) {
       throw new HttpError("Task is already marked as done", 403);
@@ -31,10 +39,13 @@ export class TaskService {
     return await taskShema.findById(id);
   }
 
-  async markTaskAsUnDone(id: string) {
+  async markTaskAsUnDone(id: string, data: any) {
     const task = await taskShema.findById(id);
 
     if (!task) throw new HttpError("Wrong task id", 404);
+
+    if (task.userId !== data.user._id)
+      throw new HttpError("You cannot edit a task that is not your own", 400);
 
     if (task.isDone === false) {
       throw new HttpError("Task is already marked as undone", 403);
@@ -44,5 +55,17 @@ export class TaskService {
       });
     }
     return await taskShema.findById(id);
+  }
+
+  async delete(id: string, data: any) {
+    const task = await taskShema.findById(id);
+
+    if (!task) throw new HttpError("Wrong task id", 404);
+
+    if (task.userId !== data.user._id) {
+      throw new HttpError("You cannot delete a task that is not your own", 400);
+    } else {
+      await taskShema.findByIdAndDelete(id);
+    }
   }
 }

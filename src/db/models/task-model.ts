@@ -23,6 +23,10 @@ const task = new Schema({
     type: String,
     required: true,
   },
+  userId: {
+    type: String,
+    required: true,
+  },
 });
 const taskShema = model("tasks", task);
 export { taskShema };
