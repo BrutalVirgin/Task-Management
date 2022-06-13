@@ -2,8 +2,7 @@
   "name": "task-management",
   "version": "1.0.0",
   "description": "",
-  "main": "main",
-  "typings": "main",
+  "main": "main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node ./src/main.ts"
