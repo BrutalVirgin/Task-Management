@@ -35,7 +35,7 @@ taskRouter.put(
 );
 
 // Delete task
-taskRouter.put(
+taskRouter.delete(
   "/deletetask/:id",
   authenticateToken,
   taskController.deleteTask.bind(taskController)
