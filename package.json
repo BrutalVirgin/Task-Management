@@ -19,15 +19,11 @@
     "url": "https://github.com/BrutalVirgin/Task-Management/issues"
   },
   "homepage": "https://github.com/BrutalVirgin/Task-Management#readme",
-  "devDependencies": {
-    "@types/node": "^17.0.42",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^4.7.3"
-  },
   "dependencies": {
     "@types/body-parser": "^1.19.2",
     "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "^17.0.42",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
@@ -36,6 +32,8 @@
     "nodemon": "^2.0.16",
     "sequelize": "^6.20.1",
     "ts-node": "^10.8.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.3",
     "validator": "^13.7.0"
   }
 }
