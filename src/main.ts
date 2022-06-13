@@ -11,6 +11,9 @@ dotenv.config({ path: path.resolve(__dirname, "./.env") });
 const app = express();
 app.use(bodyParser.json());
 
+app.use("/tasks", taskRouter);
+app.use("/users", userRouter);
+
 async function start() {
   try {
     await mongoose.connect(process.env.DBURL as string);
@@ -19,9 +22,6 @@ async function start() {
   } catch (e) {
     console.log(e);
   }
-
-  app.use("/tasks", taskRouter);
-  app.use("/users", userRouter);
 }
 
 start();
