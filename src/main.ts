@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import express from "express";
+import express, { Response, Request } from "express";
 import bodyParser from "body-parser";
 import { taskRouter } from "./routes/task-router";
 import { userRouter } from "./routes/user-router";
@@ -11,6 +11,9 @@ dotenv.config({ path: path.resolve(__dirname, "./.env") });
 const app = express();
 app.use(bodyParser.json());
 
+app.use("/", (req: Request, res: Response) => {
+  res.send("test");
+});
 app.use("/tasks", taskRouter);
 app.use("/users", userRouter);
 
