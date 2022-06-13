@@ -16,11 +16,15 @@ Add a new user. Body should contain fields:
 }
 ```
 
+---
+
 #### Email confirmation
 
 #### `PUT https://taskmanagementtest.herokuapp.com/users/emailconfirm/:id`
 
 Email confirmation, where the field `:id` must contain the user ID
+
+---
 
 #### Signin
 
@@ -35,11 +39,15 @@ Body should contain fields:
 }
 ```
 
+---
+
 #### Signout
 
 #### `POST https://taskmanagementtest.herokuapp.com/users/signout`
 
 Header should contain Bearer token in Authorization field
+
+---
 
 ## TASK API
 
@@ -61,6 +69,8 @@ Header should contain Bearer token in Authorization field. Body should contain f
 }
 ```
 
+---
+
 #### Edit task
 
 #### `PUT https://taskmanagementtest.herokuapp.com/tasks/:id`
@@ -78,11 +88,15 @@ Edit task, where the field `:id` must contain the task ID. Header should contain
 }
 ```
 
+---
+
 #### Mark task as done
 
 #### `PUT https://taskmanagementtest.herokuapp.com/tasks/markdone/:id`
 
 Mark task as done , where the field `:id` must contain the task ID. Header should contain Bearer token in Authorization field.
+
+---
 
 #### Mark task as undone
 
@@ -90,8 +104,12 @@ Mark task as done , where the field `:id` must contain the task ID. Header shoul
 
 Mark task as done , where the field `:id` must contain the task ID. Header should contain Bearer token in Authorization field.
 
+---
+
 #### Mark task as undone
 
 #### `DELETE https://taskmanagementtest.herokuapp.com/tasks/deletetask/:id`
 
 Mark task as done , where the field `:id` must contain the task ID. Header should contain Bearer token in Authorization field.
+
+---
