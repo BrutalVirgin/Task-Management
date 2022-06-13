@@ -19,9 +19,9 @@ async function start() {
     // cross-env NODE_ENV=production
     //mongodb+srv://Brutal:345124qe@tasks.7vencrt.mongodb.net/Tasks
     //process.env.DBURL as string
-    let key = process.env.MONGO_URL;
-    console.log(key);
-    await mongoose.connect(key);
+
+    console.log(process.env.MONGO_URL);
+    await mongoose.connect(process.env.MONGO_URL as string);
     console.log("database connected");
     app.listen(process.env.PORT, () => console.log(`runnin`));
   } catch (e) {
