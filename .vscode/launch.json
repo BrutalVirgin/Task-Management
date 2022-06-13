@@ -17,8 +17,8 @@
       "request": "launch",
       "name": "Start bot",
       "console": "integratedTerminal",
-      "program": "${workspaceFolder}/src/main.ts",
-      "runtimeExecutable": "nodemon"
+      "program": "${workspaceFolder}/src/main.ts"
+      // "runtimeExecutable": "nodemon"
     }
   ]
 }
