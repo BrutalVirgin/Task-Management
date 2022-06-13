@@ -16,7 +16,11 @@ app.use("/users", userRouter);
 
 async function start() {
   try {
-    await mongoose.connect(process.env.DBURL as string);
+    //mongodb+srv://Brutal:345124qe@tasks.7vencrt.mongodb.net/Tasks
+    //process.env.DBURL as string
+    await mongoose.connect(
+      "mongodb+srv://Brutal:345124qe@tasks.7vencrt.mongodb.net/Tasks"
+    );
     console.log("database connected");
     app.listen(process.env.PORT, () => console.log(`runnin`));
   } catch (e) {
